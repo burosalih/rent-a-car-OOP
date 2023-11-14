@@ -11,7 +11,7 @@ int main(){
         std::cin >> izbor;
         switch (izbor) {
         case 1:
-            std::cout << "Funkcija za login..." << std::endl;
+            std::cout << "Funkcija za login.." << std::endl;
             break;
         case 2:
             std::cout << "Funkcija za registraciju..." << std::endl;
