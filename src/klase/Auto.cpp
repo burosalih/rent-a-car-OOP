@@ -1,4 +1,4 @@
-#include "include/klase/Auto.h"
+#include "../include/klase/Auto.h"
 #include <iostream>
 
 Auto::Auto() : godina(0), cijena(0.0) {}
