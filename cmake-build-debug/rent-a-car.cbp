@@ -87,6 +87,12 @@
 		<Unit filename="C:/Users/silef/Desktop/rent-a-car-OOP/include/funkcije/KorisnikFunkcije.cpp">
 			<Option target="rent_a_car"/>
 		</Unit>
+		<Unit filename="C:/Users/silef/Desktop/rent-a-car-OOP/include/funkcije/LoginRegistracija.cpp">
+			<Option target="rent_a_car"/>
+		</Unit>
+		<Unit filename="C:/Users/silef/Desktop/rent-a-car-OOP/include/funkcije/LoginRegistracija.h">
+			<Option target="rent_a_car"/>
+		</Unit>
 		<Unit filename="C:/Users/silef/Desktop/rent-a-car-OOP/include/klase/Korisnik.h">
 			<Option target="rent_a_car"/>
 		</Unit>

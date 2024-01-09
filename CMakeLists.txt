@@ -11,6 +11,10 @@ set(SOURCES
 set(HEADERS
     include/klase/Korisnik.h
     include/funkcije/KorisnikFunkcije.cpp
+        include/funkcije/LoginRegistracija.cpp
+        include/funkcije/LoginRegistracija.cpp
+        include/funkcije/LoginRegistracija.h
+
 )
 
 add_executable(rent_a_car ${SOURCES} ${HEADERS})
