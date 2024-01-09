@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "rent_a_car::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-rent_a_car-Debug-5e7bfb6d2d3345c00010.json",
+					"jsonFile" : "target-rent_a_car-Debug-8e9f87fd866f546283bc.json",
 					"name" : "rent_a_car",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/silef/Desktop/Programiranje/C++ Projekti/rent-a-car-OOP/cmake-build-debug",
-		"source" : "C:/Users/silef/Desktop/Programiranje/C++ Projekti/rent-a-car-OOP"
+		"build" : "C:/Users/silef/Desktop/rent-a-car-OOP/cmake-build-debug",
+		"source" : "C:/Users/silef/Desktop/rent-a-car-OOP"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 5
+		"minor" : 6
 	}
 }
