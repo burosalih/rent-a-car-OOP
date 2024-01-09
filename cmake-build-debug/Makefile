@@ -176,6 +176,30 @@ include/funkcije/LoginRegistracija.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\rent_a_car.dir\build.make CMakeFiles/rent_a_car.dir/include/funkcije/LoginRegistracija.cpp.s
 .PHONY : include/funkcije/LoginRegistracija.cpp.s
 
+include/funkcije/Menu.obj: include/funkcije/Menu.cpp.obj
+.PHONY : include/funkcije/Menu.obj
+
+# target to build an object file
+include/funkcije/Menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\rent_a_car.dir\build.make CMakeFiles/rent_a_car.dir/include/funkcije/Menu.cpp.obj
+.PHONY : include/funkcije/Menu.cpp.obj
+
+include/funkcije/Menu.i: include/funkcije/Menu.cpp.i
+.PHONY : include/funkcije/Menu.i
+
+# target to preprocess a source file
+include/funkcije/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\rent_a_car.dir\build.make CMakeFiles/rent_a_car.dir/include/funkcije/Menu.cpp.i
+.PHONY : include/funkcije/Menu.cpp.i
+
+include/funkcije/Menu.s: include/funkcije/Menu.cpp.s
+.PHONY : include/funkcije/Menu.s
+
+# target to generate assembly for a file
+include/funkcije/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\rent_a_car.dir\build.make CMakeFiles/rent_a_car.dir/include/funkcije/Menu.cpp.s
+.PHONY : include/funkcije/Menu.cpp.s
+
 src/Korisnik.obj: src/Korisnik.cpp.obj
 .PHONY : src/Korisnik.obj
 
@@ -239,6 +263,9 @@ help:
 	@echo ... include/funkcije/LoginRegistracija.obj
 	@echo ... include/funkcije/LoginRegistracija.i
 	@echo ... include/funkcije/LoginRegistracija.s
+	@echo ... include/funkcije/Menu.obj
+	@echo ... include/funkcije/Menu.i
+	@echo ... include/funkcije/Menu.s
 	@echo ... src/Korisnik.obj
 	@echo ... src/Korisnik.i
 	@echo ... src/Korisnik.s

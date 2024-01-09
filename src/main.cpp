@@ -1,7 +1,8 @@
 #include <iostream>
-#include <vector>
+
 #include "../include/funkcije/KorisnikFunkcije.cpp"
 #include "../include/funkcije/LoginRegistracija.h"
+
 const std::string KORISNIK_FILE = "korisnici.txt";
 
 void korisnikMeni(){

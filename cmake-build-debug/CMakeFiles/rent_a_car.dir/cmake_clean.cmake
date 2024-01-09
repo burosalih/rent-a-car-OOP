@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rent_a_car.dir/include/funkcije/KorisnikFunkcije.cpp.obj.d"
   "CMakeFiles/rent_a_car.dir/include/funkcije/LoginRegistracija.cpp.obj"
   "CMakeFiles/rent_a_car.dir/include/funkcije/LoginRegistracija.cpp.obj.d"
+  "CMakeFiles/rent_a_car.dir/include/funkcije/Menu.cpp.obj"
+  "CMakeFiles/rent_a_car.dir/include/funkcije/Menu.cpp.obj.d"
   "CMakeFiles/rent_a_car.dir/src/Korisnik.cpp.obj"
   "CMakeFiles/rent_a_car.dir/src/Korisnik.cpp.obj.d"
   "CMakeFiles/rent_a_car.dir/src/main.cpp.obj"

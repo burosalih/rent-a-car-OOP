@@ -14,7 +14,8 @@ set(HEADERS
         include/funkcije/LoginRegistracija.cpp
         include/funkcije/LoginRegistracija.cpp
         include/funkcije/LoginRegistracija.h
-
+        include/funkcije/Menu.h
+        include/funkcije/Menu.cpp
 )
 
 add_executable(rent_a_car ${SOURCES} ${HEADERS})

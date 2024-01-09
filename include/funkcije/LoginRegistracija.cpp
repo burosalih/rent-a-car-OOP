@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include "LoginRegistracija.h"
+#include "Menu.h"
 void login() {
     int id;
     std::string username, password, storedUsername, storedPassword, Ime, Prezime;
@@ -23,13 +24,13 @@ void login() {
     if (found) {
         if (username == "admin" && password == "adminadmin") {
             std::cout << "\n---------------------------------------\nAdministrator ulogovan !\n---------------------------------------\n" << std::endl;
-            //std::admin_menu();
+            admin_menu();
         }
         else {
             std::cout << "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-" << std::endl;
             std::cout << "\tDobrodosli, " << Ime << " " << Prezime << "!" << std::endl;
             std::cout << "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-" << std::endl;
-            //std::korisnik_menu(id);
+            korisnik_menu(id);
         }
     } else {
         std::cout << "Neispravan unos." << std::endl;

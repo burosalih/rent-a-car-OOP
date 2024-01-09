@@ -286,7 +286,8 @@ CMakeFiles/rent_a_car.dir/include/funkcije/LoginRegistracija.cpp.obj: C:/Users/s
   C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/x86_64-w64-mingw32/include/vadefs.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/x86_64-w64-mingw32/include/wchar.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/x86_64-w64-mingw32/include/wctype.h \
-  C:/Users/silef/Desktop/rent-a-car-OOP/include/funkcije/LoginRegistracija.h
+  C:/Users/silef/Desktop/rent-a-car-OOP/include/funkcije/LoginRegistracija.h \
+  C:/Users/silef/Desktop/rent-a-car-OOP/include/funkcije/Menu.h
 
 CMakeFiles/rent_a_car.dir/src/Korisnik.cpp.obj: C:/Users/silef/Desktop/rent-a-car-OOP/src/Korisnik.cpp \
   C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h \
@@ -878,5 +879,7 @@ C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/x86_64-w64-mingw32/include
 C:/Users/silef/Desktop/rent-a-car-OOP/include/klase/Korisnik.h:
 
 C:/Users/silef/Desktop/rent-a-car-OOP/include/funkcije/LoginRegistracija.h:
+
+C:/Users/silef/Desktop/rent-a-car-OOP/include/funkcije/Menu.h:
 
 C:/Users/silef/Desktop/rent-a-car-OOP/src/Korisnik.cpp:
