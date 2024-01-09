@@ -14,3 +14,5 @@ static Korisnik registerUser() {
 static bool loginUser(const Korisnik& korisnik, const std::string& enteredUsername, const std::string& enteredPassword) {
     return (korisnik.getUsername() == enteredUsername && korisnik.getPassword() == enteredPassword);
 }
+
+
