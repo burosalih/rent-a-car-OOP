@@ -70,6 +70,13 @@ build CMakeFiles/rent_a_car.dir/include/funkcije/KorisnikFunkcije.cpp.obj: CXX_C
   OBJECT_DIR = CMakeFiles\rent_a_car.dir
   OBJECT_FILE_DIR = CMakeFiles\rent_a_car.dir\include\funkcije
 
+build CMakeFiles/rent_a_car.dir/include/funkcije/KorisnikMenu.cpp.obj: CXX_COMPILER__rent_a_car_unscanned_Debug C$:/Users/PC/OneDrive/Dokumenti/GitHub/rent-a-car-OOP/include/funkcije/KorisnikMenu.cpp || cmake_object_order_depends_target_rent_a_car
+  DEP_FILE = CMakeFiles\rent_a_car.dir\include\funkcije\KorisnikMenu.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/PC/OneDrive/Dokumenti/GitHub/rent-a-car-OOP/include
+  OBJECT_DIR = CMakeFiles\rent_a_car.dir
+  OBJECT_FILE_DIR = CMakeFiles\rent_a_car.dir\include\funkcije
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target rent_a_car
@@ -78,7 +85,7 @@ build CMakeFiles/rent_a_car.dir/include/funkcije/KorisnikFunkcije.cpp.obj: CXX_C
 #############################################
 # Link the executable rent_a_car.exe
 
-build rent_a_car.exe: CXX_EXECUTABLE_LINKER__rent_a_car_Debug CMakeFiles/rent_a_car.dir/src/main.cpp.obj CMakeFiles/rent_a_car.dir/src/Korisnik.cpp.obj CMakeFiles/rent_a_car.dir/include/funkcije/KorisnikFunkcije.cpp.obj
+build rent_a_car.exe: CXX_EXECUTABLE_LINKER__rent_a_car_Debug CMakeFiles/rent_a_car.dir/src/main.cpp.obj CMakeFiles/rent_a_car.dir/src/Korisnik.cpp.obj CMakeFiles/rent_a_car.dir/include/funkcije/KorisnikFunkcije.cpp.obj CMakeFiles/rent_a_car.dir/include/funkcije/KorisnikMenu.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\rent_a_car.dir
