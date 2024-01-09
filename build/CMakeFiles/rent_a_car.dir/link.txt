@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/rent_a_car.dir/src/main.cpp.o CMakeFiles/rent_a_car.dir/src/Korisnik.cpp.o CMakeFiles/rent_a_car.dir/include/funkcije/KorisnikFunkcije.cpp.o -o rent_a_car 

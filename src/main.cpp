@@ -1,7 +1,24 @@
 #include <iostream>
+#include <vector>
+#include "../include/funkcije/KorisnikFunkcije.cpp"
+
+const std::string KORISNIK_FILE = "korisnici.txt";
+
+void korisnikMeni(){
+    std::cout << "Dobrodosao korisnik !" << std::endl;
+}
+
+void adminMeni(){
+    std::cout << "Dobrodosao admin !" << std::endl;
+}
 
 int main(){
     int izbor;
+    
+    std::vector<Korisnik> korisnici = Korisnik::ucitajKorisnike(KORISNIK_FILE);
+    bool korisnikPronadjen = false;
+    std::string enteredUsername, enteredPassword;
+    Korisnik loggedInKorisnik;
 
     do {
         std::cout << "*********RENT-A-CAR*********" << std::endl;
@@ -12,6 +29,19 @@ int main(){
         switch (izbor) {
         case 1:
             std::cout << "Funkcija za login.." << std::endl;
+            std::cout << "Unesite username:";
+            std::cin >> enteredUsername;
+            std::cout << "Unesite password:";
+            std::cin >> enteredPassword;
+
+            for(const auto& korisnik : korisnici) {
+                if(loginUser(korisnik, enteredUsername,enteredPassword)){
+                    loggedInKorisnik = korisnik;
+                    korisnikPronadjen = true;
+                    std::cout << "Uspjelo.";
+                    break;
+                }
+            }
             break;
         case 2:
             std::cout << "Funkcija za registraciju..." << std::endl;
