@@ -102,6 +102,171 @@ void ucitavanje()
 	system("cls");
 }
 
+void adminMeni()
+{
+    cout << "------------------------------------------ ADMIN MENI ------------------------------------------" << endl;
+    cout << "\n\t\t\t\t\t1.Prikazi auta"
+         << "\n\t\t\t\t\t2.Dodaj auto"
+         << "\n\t\t\t\t\t3.Izbrisi auto"
+         << "\n\t\t\t\t\t4.Resetuj cijenu auta"
+         << "\n\t\t\t\t\t5.Odjava"
+         << "\n\t\t\t\t\tUnesite opciju:";
+    int odgovor;
+    cin >> odgovor;
+    if (odgovor == 1)
+    {
+        system("cls");
+        cout << "------------------------------------------ ADMIN MENI ------------------------------------------" << endl;
+        prikaziAute();
+        system("cls");
+        adminMeni();
+    }
+    else if (odgovor == 2)
+    {
+        system("cls");
+        string ime;
+        cout << "------------------------------------------ ADMIN MENI ------------------------------------------" << endl;
+        cout << "\n\t\t\t\t\tUnesite naziv vozila: ";
+        cin >> ime;
+        dodajAuto(ime);
+    }
+    else if (odgovor == 3)
+    {
+        system("cls");
+        string broj;
+        cout << "------------------------------------------ ADMIN MENI ------------------------------------------" << endl;
+        cout << "\n\t\t\t\t\tUnesite broj registracije vozila: ";
+        cin >> broj;
+        obrisiAuto(broj);
+        cout << "\n\t\t\t\t\tUspjesno ste obrisali vozilo.";
+        system("PAUSE");
+        system("cls");
+        adminMeni();
+    }
+    else if (odgovor == 4)
+    {
+        system("cls");
+        cout << "------------------------------------------ ADMIN MENI ------------------------------------------" << endl;
+        cout << "\n\t\t\t\t\tMozete resetovati samo cijenu auta."
+             << "\n\t\t\t\t\tDa bi ste promjenili druge podatke o autu molimo da napravite novo auto.\n";
+        string broj;
+        cout << "\n\t\t\t\t\tUnesite broj registracije vozila: ";
+        cin >> broj;
+        int cijena;
+        cout << "\n\t\t\t\t\tUnesite novu cijenu vozila: ";
+        cin >> cijena;
+        resetAutomobil(broj, cijena);
+    }
+    else if (odgovor == 5)
+    {
+        system("cls");
+        string odjava = "Hvala Vam na koristenju nase aplikacije i vozite oprezno!\nVracanje na glavni meni\n";
+        for (int i = 0; i < odjava.length(); i++)
+        {
+            Sleep(20);
+            cout << odjava[i];
+        }
+        string posljednje = "\nUcitavanje";
+        for (int i = 0; i < posljednje.length(); i++)
+        {
+            cout << posljednje[i];
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            Sleep(500);
+            cout << '.';
+        }
+        dobrodosli();
+    }
+    else
+    {
+        system("cls");
+        cout << "[GRESKA] Opcija ne postoji\n\n"
+             << "Vracanje na admin meni\n";
+        Sleep(1000);
+        system("cls");
+        adminMeni();
+    }
+}
+
+int procijeniCijenu(int vrijeme)
+{
+    int cijena = 0;
+    cijena += (vrijeme * 249);
+    return cijena;
+}
+
+void rezervisiAuto()
+{
+    string num_plate, imeVlasnika, lokacija;
+    int vrijeme;
+    cout << "Izaberite vozilo iz opcije \"Prikazi vozila\" !\n";
+    cout << "\nUnesite ID broj vozila koje zelite: ";
+    cin >> num_plate;
+
+    Auto temp;
+
+    if (!dostupnaRegistracija(num_plate))
+    {
+        cout << "\nAuto nije dostupno\n";
+        cout << "\nVracanje na korisnicki meni";
+        Sleep(500);
+        system("cls");
+        korisnikMeni();
+        system("cls");
+    }
+    else
+    {
+        cout << "\nUnesite vrijeme rentanja vozila (u satima): ";
+        cin >> vrijeme;
+        if (vrijeme < 3)
+        {
+            cout << "\n[GRESKA] Minimalno 3 sata !\n";
+            cout << "\nVracanje na korisnicki meni\n";
+            Sleep(500);
+            system("cls");
+            korisnikMeni();
+        }
+        else
+        {
+            cout << "\nUnesite svoje ime: ";
+            cin >> imeVlasnika;
+            cout << "\nUnesite svoju adresu: ";
+            cin >> lokacija;
+            temp.rezervirajAuto(imeVlasnika);
+            system("cls");
+            string poruka = "\nUspjesno ste rezervisali auto: ";
+            string posljednjaPoruka = "\nAuto ce vam biti predano na: ";
+            string iznosPoruke = "\nIznos rentanja je: ";
+            for (int i = 0; i < poruka.length(); i++)
+            {
+                Sleep(20);
+                cout << poruka[i];
+            }
+            cout << imeVlasnika << endl;
+            for (int i = 0; i < posljednjaPoruka.length(); i++)
+            {
+                Sleep(20);
+                cout << posljednjaPoruka[i];
+            }
+            cout << lokacija << endl;
+            for (int i = 0; i < iznosPoruke.length(); i++)
+            {
+                Sleep(20);
+                cout << iznosPoruke[i];
+            }
+            cout << procijeniCijenu(vrijeme) << "KM" << endl;
+            cout << "\nMolimo da pripremite vozacku dozvolu\n"
+                 << "\nPlacate gore navedeni iznos pri preuzimanju vozila\n";
+            cout << "\nHvala Vam na koristenju nase aplikacije i vozite oprezno!\n";
+            system("PAUSE");
+            system("cls");
+            korisnikMeni();
+        }
+    }
+}
+
+
 void dobrodosli()
 {
     cout << "------------------------------------------ DOBRODOSLI U RENT-A-CAR CAPCARAP ------------------------------------------" << endl;
