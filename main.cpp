@@ -86,6 +86,217 @@ private:
     int kapacitet_sjedista;
 };
 
+bool dostupnaRegistracija(string broj_registracije)
+{
+    string n;
+    string t = "BROJ REGISTRACIJE: " + broj_registracije;
+    ifstream datoteka("auta.txt");
+    while (getline(datoteka, n))
+    {
+        if (n == t)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Funkcija za provjeru valjanosti podataka za prijavu
+bool registriran(string korisnicko_ime, string lozinka, int val)
+{
+    string un, pw;
+    if (val == 1)
+    {
+        ifstream citaj(korisnicko_ime + "_admin.txt");
+        getline(citaj, un);
+        getline(citaj, pw);
+
+        if (un == korisnicko_ime && pw == lozinka)
+        {
+            return true;
+        }
+    }
+    else
+    {
+        ifstream citaj(korisnicko_ime + ".txt");
+        getline(citaj, un);
+        getline(citaj, pw);
+
+        if (un == korisnicko_ime && pw == lozinka)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Funkcija za provjeru postojanja korisnika
+bool datotekaPostoji(string korisnicko_ime)
+{
+    string un;
+    ifstream citaj(korisnicko_ime + ".txt");
+    getline(citaj, un);
+
+    if (un == korisnicko_ime)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool adminDatotekaPostoji(string korisnicko_ime)
+{
+    string un;
+    ifstream citaj(korisnicko_ime + "_admin.txt");
+    getline(citaj, un);
+
+    if (un == korisnicko_ime)
+    {
+        return true;
+    }
+    return false;
+}
+
+void registracijaPrijava(int odgovor)
+{
+    string korisnicko_ime, lozinka;
+    if (odgovor == 1 || odgovor == 2)
+    {
+        cout << "\n\t\t\t\t\t\tUnesite korisnicko ime: ";
+        cin >> korisnicko_ime;
+        cout << "\n\t\t\t\t\t\tUnesite lozinku: ";
+        cin >> lozinka;
+
+        // provjera podataka za prijavu
+        if (registriran(korisnicko_ime, lozinka, odgovor))
+        {
+            cout << "\n\t\t\t\t\t\tUspjesno ste prijavljeni!";
+            Sleep(500);
+            system("cls");
+            if (odgovor == 1)
+            {
+                adminMeni();
+            }
+            else if (odgovor == 2)
+            {
+                korisnikMeni();
+            }
+            system("PAUSE");
+        }
+        else
+        {
+            system("cls");
+            cout << "\n\t\t\t\t\t\t[GRESKA] Korisnicko ime ili lozinka su netocni, pokusajte ponovo.\n";
+
+            cout << "\n\t\t\t\t\t\tUnesite 1 za glavni izbornik." << endl
+                 << "\n\t\t\t\t\t\tUnesite 2 za izlaz iz programa." << endl;
+            int izbor;
+            cout << "\n\t\t\t\t\t\tIZBOR: ";
+            cin >> izbor;
+            system("cls");
+
+            // kraj programa
+            if (izbor == 1)
+            {
+                dobrodosli();
+            }
+            else if (izbor == 2)
+            {
+                cout << "Hvala Vam na koristenju nase aplikacije i vozite oprezno!\n";
+                Sleep(500);
+                system("exit");
+            }
+        }
+    }
+        // registracija novih korisnika
+    else if (odgovor == 3)
+    {
+        cout << "Izaberite korisnicko ime: ";
+        cin >> korisnicko_ime;
+        cout << "Izaberite lozinku: ";
+        cin >> lozinka;
+
+        // provjera postojanja korisnika
+        if (datotekaPostoji(korisnicko_ime))
+        {
+            system("cls");
+            cout << "Korisnièko ime vec postoji." << endl;
+            Sleep(500);
+
+            cout << "\nUnesite 1 za glavni izbornik." << endl
+                 << "Unesite 2 za izlaz iz programa." << endl;
+            int izbor;
+            cout << "\nIZBOR: ";
+            cin >> izbor;
+            system("cls");
+
+            // kraj programa
+            if (izbor == 1)
+            {
+                dobrodosli();
+            }
+            else if (izbor == 2)
+            {
+                cout << "Hvala Vam na koristenju nase aplikacije i vozite oprezno!\n";
+                Sleep(1000);
+                system("exit");
+            }
+        }
+
+        ofstream datoteka;
+        datoteka.open(korisnicko_ime + ".txt");
+        datoteka << korisnicko_ime << endl
+                 << lozinka;
+        datoteka.close();
+
+        cout << "Uspjesna registracija!\n";
+        cout << "\nUnesite 1 za glavni izbornik." << endl
+             << "Unesite 2 za izlaz iz programa." << endl;
+        int izbor;
+        cout << "\nIZBOR: ";
+        cin >> izbor;
+        system("cls");
+
+        // kraj programa
+        if (izbor == 1)
+        {
+            dobrodosli();
+        }
+        else if (izbor == 2)
+        {
+            cout << "Hvala Vam na koristenju nase aplikacije i vozite oprezno!\n";
+            Sleep(1000);
+            system("exit");
+        }
+    }
+    else
+    {
+        system("cls");
+        cout << "[GREsKA] Opcija ne postoji.\n";
+        Sleep(500);
+
+        cout << "\nUnesite 1 za glavni izbornik." << endl
+             << "Unesite 2 za izlaz iz programa." << endl;
+        int izbor;
+        cout << "\nIZBOR: ";
+        cin >> izbor;
+        system("cls");
+
+        // kraj programa
+        if (izbor == 1)
+        {
+            dobrodosli();
+        }
+        else if (izbor == 2)
+        {
+            cout << "Hvala Vam na koristenju nase aplikacije i vozite oprezno!\n";
+            Sleep(1000);
+            system("exit");
+        }
+    }
+}
+
+
 void ucitavanje()
 {
 	cout << "	____  _______   ________	___     	_________	____\n"
