@@ -1,3 +1,0 @@
-/home/buro/Desktop/code/rent-a-car-OOP/build/CMakeFiles/rent_a_car.dir
-/home/buro/Desktop/code/rent-a-car-OOP/build/CMakeFiles/edit_cache.dir
-/home/buro/Desktop/code/rent-a-car-OOP/build/CMakeFiles/rebuild_cache.dir
