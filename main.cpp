@@ -499,6 +499,89 @@ void resetAutomobil(string num_plate, int nova_cijena)
         adminMeni();
     }
 }
+void korisnikMeni()
+{
+	cout << "------------------------------------------ KORISNIK MENI ------------------------------------------" << endl;
+	cout << "\n\t\t\t\t\t1.Prikazi aute"
+    	<< "\n\t\t\t\t\t2.Rentaj auto"
+    	<< "\n\t\t\t\t\t3.Izracunaj cijenu"
+    	<< "\n\t\t\t\t\t4.Odjava"
+    	<< "\n\t\t\t\t\tUnesite opciju:";
+	int odgovor;
+	cin >> odgovor;
+
+	if (odgovor == 1)
+	{
+    	system("cls");
+    	cout << "------------------------------------------ KORISNIK MENI ------------------------------------------" << endl;
+    	prikaziAute();
+    	system("cls");
+    	korisnikMeni();
+	}
+	else if (odgovor == 2)
+	{
+    	system("cls");
+    	rezervisiAuto();
+	}
+	else if (odgovor == 3)
+	{
+    	system("cls");
+    	cout << "------------------------------------------ KORISNIK MENI ------------------------------------------" << endl;
+    	cout << "Minimalan vremenski period rentanja auta je 3 sata!";
+    	int vrijeme;
+    	cout << "Unesite vrijeme rentanja vozila (u satima): ";
+    	cin >> vrijeme;
+
+    	if (vrijeme < 3)
+    	{
+        	cout << "\n[GRESKA] Minimalan vremenski period rentanja auta je 3 sata!\n";
+        	cout << "Vracanje na korisnicki meni....\n";
+        	Sleep(1000);
+        	system("cls");
+        	korisnikMeni();
+    	}
+    	else
+    	{
+        	cout << "Cijena navedenog vozila je: " << procijeniCijenu(vrijeme) << " KM" << endl;
+        	system("PAUSE");
+        	system("cls");
+        	korisnikMeni();
+    	}
+	}
+	else if (odgovor == 4)
+	{
+    	system("cls");
+    	cout << "------------------------------------------ KORISNIK MENI ------------------------------------------" << endl;
+    	string odjava = "Hvala Vam na koristenju nase aplikacije i vozite oprezno!\n \nVracanje na glavni meni!\n";
+    	for (int i = 0; i < odjava.length(); i++)
+    	{
+        	Sleep(20);
+        	cout << odjava[i];
+    	}
+    	string posljednje = "\n";
+    	for (int i = 0; i < posljednje.length(); i++)
+    	{
+        	Sleep(500);
+        	cout << posljednje[i];
+    	}
+    	for (int i = 0; i < 4; i++)
+    	{
+        	Sleep(500);
+        	cout << '.';
+    	}
+    	dobrodosli();
+	}
+	else
+	{
+    	system("cls");
+    	cout << "[GRESKA] Opcija ne postoji!\n\n"
+        	<< "Vracanje na korisnicki meni\n";
+    	Sleep(1000);
+    	system("cls");
+    	korisnikMeni();
+	}
+}
+
 
 int main()
 {
